@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
     
     // Calculate pricing for each date
     const dailyPrices: Record<string, number> = {};
-    let minimumStay = property.defaultMinimumStay || 1;
+    let minimumStay = (property as any).defaultMinimumStay ?? 1;
     
     // Check each day for pricing
     const currentDate = new Date(checkInDate);
